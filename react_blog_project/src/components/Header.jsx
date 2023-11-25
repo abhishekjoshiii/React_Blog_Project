@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Navbar, Nav, Form, Button } from 'react-bootstrap';
+
 
 
 const Header = () => {
@@ -21,28 +23,45 @@ const Header = () => {
         //     </nav>
         // </header>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/create">Create Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/update">Update Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">Disabled</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+        // <nav className="navbar navbar-expand-lg navbar-light bg-grey border border-2 fs-5">
+        //     <a className="navbar-brand" href="/">Bolgger</a>
+        //     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        //         <span className="navbar-toggler-icon"></span>
+        //     </button>
+        //     <div className="collapse navbar-collapse" id="navbarNav">
+        //         <ul className="navbar-nav">
+        //             <li className="nav-item active">
+        //                 <a className="nav-link" href="/">Home</a>
+        //             </li>
+        //             <li className="nav-item">
+        //                 <a className="nav-link" href="/create">Create Blog</a>
+        //             </li>
+        //             <li className="nav-item">
+        //                 <a className="nav-link" href="/update">Update Blog</a>
+        //             </li>
+
+        //         </ul>
+        //     </div>
+        // </nav>
+
+        <div>
+            <Navbar bg="dark" variant="dark">
+                <Container>
+
+                    <Navbar.Brand href='/'>JourNal</Navbar.Brand>
+
+                    <Nav className="mr-auto float-right">
+                        <Nav.Link href="/"> Home </Nav.Link>
+                        <Nav.Link as={Link} to="/create">CreateBlog</Nav.Link>
+                        <Nav.Link as={Link} to="/update">UpdateBlog</Nav.Link>
+                    </Nav>
+                    <Form inline>
+
+                    </Form>
+                </Container>
+            </Navbar>
+
+        </div>
     );
 };
 
